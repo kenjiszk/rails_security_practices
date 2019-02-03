@@ -1,0 +1,21 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: root
+    ports:
+      - "3306:3306"
+
+  web:
+    env_file: .env
+    build: .
+    command: bundle exec puma
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    tty: true
+    links:
+      - db
