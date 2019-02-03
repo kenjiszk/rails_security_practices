@@ -7,3 +7,6 @@ gem 'rails', '~> 5.2.2'
 gem 'mysql2'
 gem 'puma'
 gem 'bootsnap'
+gem 'devise'
+gem 'uglifier'
+gem 'mini_racer', platforms: :ruby
